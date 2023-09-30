@@ -1,5 +1,5 @@
 import javax.swing.text.html.HTMLDocument.HTMLReader.HiddenAction;
-
+//adding node class
 class Node {
     int data;
     Node left, right;
