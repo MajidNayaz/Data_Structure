@@ -75,6 +75,9 @@ public class Avl_T {
 
         root.height = max(height(root.left), height(root.right))+1;
         
+        //in here the blance should cheked
+        
+        
         int balance = getBalance(root);
     }
 }
