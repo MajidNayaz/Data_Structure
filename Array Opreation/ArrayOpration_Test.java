@@ -49,7 +49,11 @@ public class ArrayOpration_Test {
         }
 
         return newArray;
-    }                                                           //end of insertion function it is done successfully
+    }                                                           //end of insertion function
+
+    public static void traversal(int Array[]){
+        
+    }
                                                                 
     public static void main(String[] args) {
         
