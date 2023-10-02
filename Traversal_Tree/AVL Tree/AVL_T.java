@@ -68,21 +68,22 @@ class AVL_T {
 
         int balance = getBalance(node);
 
-        if (balance > 1 && key < node.left.key)
-            return rightRotate(node);
+        // if (balance > 1 && key < node.left.key)
+        //     return rightRotate(node);
 
-        if (balance < -1 && key > node.right.key)
-            return leftRotate(node);
+        // if (balance < -1 && key > node.right.key)
+        //     return leftRotate(node);
 
-        if (balance > 1 && key > node.left.key) {
-            node.left = leftRotate(node.left);
-            return rightRotate(node);
-        }
+        // if (balance > 1 && key > node.left.key) {
+        //     node.left = leftRotate(node.left);
+        //     return rightRotate(node);
+        // }
 
-        if (balance < -1 && key < node.right.key) {
-            node.right = rightRotate(node.right);
-            return leftRotate(node);
-        }
+        // if (balance < -1 && key < node.right.key) {
+        //     node.right = rightRotate(node.right);
+        //     return leftRotate(node);
+        // }
+        i
 
         return node;
     }

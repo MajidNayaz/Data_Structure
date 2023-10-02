@@ -1,5 +1,3 @@
-import javax.swing.text.html.HTMLDocument.HTMLReader.HiddenAction;
-//adding node class
 class Node {
     int data;
     Node left, right;
@@ -8,13 +6,9 @@ class Node {
     Node(int data) {
         this.data = data;
         left = right = null;
-        height = 0;
+        height = 1;
     }
 }
-
-/**
- * Avl_T
- */
 public class Avl_T {
 
     Node root;
@@ -75,9 +69,36 @@ public class Avl_T {
 
         root.height = max(height(root.left), height(root.right))+1;
         
-        //in here the blance should cheked
-        
-        
         int balance = getBalance(root);
+
+        if(balance>1){
+            if(key>root.left.data){
+                root.left = leftRotate(root.left);
+            }
+            return rightRotate(root);
+        }
+        if(balance<1){
+            if(key<root.right.data){
+              root.right = rightRotate(root.right);
+            }
+            return leftRotate(root);
+        }
+        return root;
+
+    }
+
+    void perOrder(Node node) {
+        //root left right
+        System.out.println(node.data);
+        perOrder(node.left);
+        perOrder(node.right);
+    }
+
+    public static void main(String[] args) {
+     AVL_T av = new AVL_T();
+     av.root = av.insert(av.root, 34);
+     av.insert(av.root, 24);
+     av.insert(av.root, 14);
+     av.preOrder(av.root);  
     }
 }
