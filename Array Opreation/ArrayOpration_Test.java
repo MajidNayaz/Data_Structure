@@ -53,6 +53,9 @@ public class ArrayOpration_Test {
 
     public static void traversal(int Array[]){
         System.out.println("if you are agree please inter one !");
+        for (int i = 0; i < Array.length; i++) {
+            System.out.println(Array[i]);
+        }
     }
                                                                 
     public static void main(String[] args) {
