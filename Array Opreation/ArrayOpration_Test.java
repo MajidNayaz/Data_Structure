@@ -87,7 +87,7 @@ public class ArrayOpration_Test {
              insertionE(array, data);
             break;
             case 2: // for traversal
-            
+            traversal(array);
             break;
             case 3: // for delation
             
