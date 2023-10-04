@@ -7,9 +7,7 @@ class Node {
         height = 1;
     }
 }
-/**
- * Test_Avl
- */
+
 public class Test_Avl {
 
     Node root;
@@ -46,12 +44,30 @@ public class Test_Avl {
     public Node insertNode(Node node, int data) {
 
         if(node == null) {
-            node = new Node(data);
-            return node;
+            return (new Node(data));
         }
 
-        
+        if(data>node.data) {
+            node.right = insertNode(node.right, data);
+        }if else (data<node.data) {
+            node.left = insertNode(node.left, data);
+        }else 
+        return node;
 
+        int balance = getBalance(node);
 
+        if(balance > 1) {
+            if(node.left.data>data){
+                node.left = rightRotate(node.left);
+            }
+            return rightRotate(node);
+        }
+
+        if(balance < -1) {
+            if(node.right.data<data){
+                node.right = rightRotate(node.right);
+            }
+            return rightRotate(node);
+        }
     }
 }
