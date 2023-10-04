@@ -14,13 +14,13 @@ public class Test_Avl {
 
     int height(Node node) {
         return node == null ? 0 : node.height;
-       }
+    }
 
     int getBalance(Node node) {
         return node == null ? 0 : height(node.left) - height(node.right);
     }
 
-   Node leftRotate(Node node) {
+    Node leftRotate(Node node) {
         Node rightNode = node.right;
         Node temp = rightNode.left;
 
@@ -40,8 +40,8 @@ public class Test_Avl {
         leftNode.right = node;
         node.left = temp;
 
-        node.height = Math.max(height(node.left),height(node.right)) + 1;
-        leftNode.height = Math.max(height(leftNode.left),height(leftNode.right)) + 1;
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+        leftNode.height = Math.max(height(leftNode.left), height(leftNode.right)) + 1;
 
         return leftNode;
     }
@@ -55,11 +55,11 @@ public class Test_Avl {
             node.left = insertNode(node.left, data);
         } else if (node.data < data) {
             node.right = insertNode(node.right, data);
-        } else{
-            return node; 
+        } else {
+            return node;
         }
 
-        node.height = Math.max(height(node.left),height(node.right)) + 1;
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
 
         int balance = getBalance(node);
 
@@ -81,20 +81,20 @@ public class Test_Avl {
     }
 
     void preOrder(Node node) {
-        if(node == null) {
+        if (node == null) {
             return;
         }
-        System.out.print(node.data+", ");
+        System.out.print(node.data + ", ");
         preOrder(node.left);
         preOrder(node.right);
     }
 
-    void inOrder (Node node) {
-        if(node == null) {
+    void inOrder(Node node) {
+        if (node == null) {
             return;
-        }        
+        }
         inOrder(node.left);
-        System.out.print(node.data+", ");
+        System.out.print(node.data + ", ");
         inOrder(node.right);
     }
 
