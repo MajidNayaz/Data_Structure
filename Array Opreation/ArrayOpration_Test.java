@@ -1,4 +1,3 @@
-import java.net.SocketTimeoutException;
 import java.util.Scanner;
 
 public class ArrayOpration_Test {
@@ -52,9 +51,38 @@ public class ArrayOpration_Test {
     }                                                           //end of insertion function
 
     public static void traversal(int Array[]){
-        System.out.println("if you are agree please inter one !");
         for (int i = 0; i < Array.length; i++) {
             System.out.println(Array[i]);
+        }
+    }
+    
+    public static int Search(int oldArray[], int key) {
+        for (int i = 0; i < oldArray.length; i++) {
+            if(oldArray[i] == key) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int[] delation(int oldArray[], int key){
+
+        int pos = Search(oldArray, key);
+        int newArray[] = new int[oldArray.length-1];
+         
+        if(pos == -1) {
+            System.out.println("Elemnt not found");
+            return oldArray;
+        }else {
+            for (int i = 0; i < newArray.length; i++) {
+                if(i < pos){
+                    newArray[i] = oldArray[i];
+                }else if(i >= pos) {
+                    newArray[i] = oldArray[i-1];
+                }
+            }
+            System.out.println("element delated successfully");
+            return newArray;
         }
     }
                                                                 
@@ -90,13 +118,20 @@ public class ArrayOpration_Test {
             traversal(array);
             break;
             case 3: // for delation
-            
+            System.out.println("which element you wanna delate?");
+            int y = sc.nextInt();
+            delation(array, y);
             break;
             case 4:  // for sorting
             
             break;
             case 5:  // for searching 
-            
+            System.out.println("Enter the elemnt you wanna search");
+            int x = sc.nextInt();
+            if(Search(array,x) == -1) {
+                System.out.println("Not found");
+            }else 
+            System.out.println(x+ " Found at endix "+Search(array, x));
             break;
             default:
             System.out.println("your number is not valid! \n please enter a valid number");
