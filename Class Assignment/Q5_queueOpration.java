@@ -1,25 +1,8 @@
-public class queue {
-    public static void main(String[] args) {
-        queueOpration q = new queueOpration(4);
-        q.enqueue(34);
-        q.enqueue(46);
-        q.enqueue(89);
-        q.enqueue(45);
-        q.enqueue(56);
-        q.dequeue();
-        q.dequeue();
-        q.dequeue();
-        q.dequeue();
-        q.dequeue();
-        q.enqueue(234);
-    }
-}
-
-class queueOpration {
+public class Q5_queueOpration {
     private int front, rear, size;
     private int queueArray[];
 
-    queueOpration(int capacity) {
+    Q5_queueOpration(int capacity) {
         queueArray = new int[capacity];
         front = 0;
         rear = -1;
@@ -62,5 +45,19 @@ class queueOpration {
         } else {
             System.out.println("Queue is empty");
         }
+    }
+    public static void main(String[] args) {
+        Q5_queueOpration q = new Q5_queueOpration(4);
+        q.enqueue(34);
+        q.enqueue(46);
+        q.enqueue(89);
+        q.enqueue(45);
+        q.enqueue(56);
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.enqueue(234);
     }
 }
