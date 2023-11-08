@@ -50,14 +50,14 @@ public class Q5_queueOpration {
         Q5_queueOpration q = new Q5_queueOpration(4);
         q.enqueue(34);
         q.enqueue(46);
-        q.enqueue(89);
-        q.enqueue(45);
-        q.enqueue(56);
+        // q.enqueue(89);
+        // q.enqueue(45);
+        // q.enqueue(56);
         q.dequeue();
         q.dequeue();
-        q.dequeue();
-        q.dequeue();
-        q.dequeue();
-        q.enqueue(234);
+        // q.dequeue();
+        // q.dequeue();
+        // q.dequeue();
+         q.enqueue(234);
     }
 }
